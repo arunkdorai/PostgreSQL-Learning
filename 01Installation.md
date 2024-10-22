@@ -71,3 +71,62 @@ Here’s a summary of the key points for getting started with PostgreSQL:
 ### Course Focus
 - The course will primarily utilize PSQL (the shell) rather than PG Admin (the GUI).
 - Commands will be consistent across different operating systems (Windows and Mac).
+
+To connect PostgreSQL to PowerShell, follow these steps:
+
+### 1. Install PostgreSQL
+Make sure you have PostgreSQL installed on your machine, including the command-line tools.
+
+### 2. Open PowerShell
+- Press `Windows + X` and select **Windows PowerShell** (or simply search for "PowerShell" in the Start menu).
+
+### 3. Add PostgreSQL to the PATH (if necessary)
+If PostgreSQL's `bin` directory isn't in your system PATH, you need to add it:
+
+- Find the installation directory, usually something like:
+  ```
+  C:\Program Files\PostgreSQL\<version>\bin
+  ```
+- To add it temporarily, run the following command in PowerShell:
+  ```powershell
+  $env:Path += ";C:\Program Files\PostgreSQL\<version>\bin"
+  ```
+- To add it permanently, you can update the system environment variables through the Control Panel or use PowerShell commands.
+
+### 4. Connect to PostgreSQL using PSQL
+1. **Open PowerShell**.
+2. **Run the PSQL Command**:
+   ```powershell
+   psql -U postgres -h localhost -d postgres
+   ```
+   - Replace `postgres` with your username if different.
+   - Replace `localhost` with the server address if connecting remotely.
+   - Replace `postgres` at the end with your desired database name.
+
+3. **Enter Password**: When prompted, enter the password for the user.
+
+### Example
+Here’s how it looks:
+```powershell
+psql -U postgres -h localhost -d postgres
+Password for user postgres:
+```
+
+### 5. Basic Commands in PSQL
+Once connected, you can run basic SQL commands:
+- To list databases:
+  ```sql
+  \l
+  ```
+- To connect to a different database:
+  ```sql
+  \c database_name
+  ```
+- To exit PSQL:
+  ```sql
+  \q
+  ```
+
+### Notes
+- Ensure PostgreSQL server is running before attempting to connect.
+- If you encounter any issues, check the PostgreSQL logs for error messages.
