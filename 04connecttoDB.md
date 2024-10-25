@@ -116,4 +116,11 @@ psql DBNAME
 2. If you're already logged in to the `psql` terminal, you can connect to another database using the `\c` command:
    ```sql
    \c new_database_name
+
+### Note: Always end SQL statements with a semicolon ;
+
+SQL Shell waits for the semicolon and executes all lines as one SQL statement.
+
+A multiple lines SQL statement is not executed before we include a semicolon at the end.
+
    ```
