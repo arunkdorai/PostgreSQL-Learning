@@ -35,14 +35,14 @@
 
 6. **Filtering by Aggregate Functions**:
    - You can specify different conditions, such as:
-   - **More than 40**:
-     ```sql
-     HAVING COUNT(*) > 40;
-     ```
-   - **Less than or equal to 180**:
-     ```sql
-     HAVING COUNT(*) <= 180;
-     ```
+     - **More than 40**:
+       ```sql
+       HAVING COUNT(*) > 40;
+       ```
+     - **Less than or equal to 180**:
+       ```sql
+       HAVING COUNT(*) <= 180;
+       ```
 
 7. **Aggregate Functions**:
    - Common aggregate functions include:
@@ -52,7 +52,7 @@
      - `MAX()`, `MIN()`: Finds the maximum and minimum values, respectively.
 
 8. **Documentation**:
-   - For more functions and details, refer to the PostgreSQL documentation on aggregate functions.
+   - For more functions and details, refer to the PostgreSQL documentation on aggregate functions: [PostgreSQL Aggregate Functions](https://www.postgresql.org/docs/17/functions-aggregate.html).
 
 9. **Example**:
    - To find countries with populations greater than 180:
