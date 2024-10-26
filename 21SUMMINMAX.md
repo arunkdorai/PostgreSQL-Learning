@@ -118,3 +118,25 @@
 
 ### Conclusion
 These SQL queries help you analyze car prices in your database effectively. If you have further questions or need more examples, feel free to ask!
+
+### Key Points for Using the SUM() Function in SQL
+
+1. **Calculating Total Price of All Cars**:
+   - To find the total price of all cars in the table, use the `SUM()` function:
+     ```sql
+     SELECT SUM(price) FROM car;
+     ```
+   - This will give you the total sum of prices, e.g., about $55 million.
+
+2. **Calculating Total Price by Make**:
+   - To aggregate the total price for each car make, you can use the following query:
+     ```sql
+     SELECT make, SUM(price) FROM car GROUP BY make;
+     ```
+   - This will return the total price for each make. For example, Ford might have a total of $4 million.
+
+3. **Understanding the Output**:
+   - The results will show each car make alongside its total sum, helping you see how much revenue each brand contributes.
+
+### Summary
+Using the `SUM()` function allows you to quickly aggregate total prices for cars, either overall or by specific makes. If you have any questions or need further examples, feel free to ask!
