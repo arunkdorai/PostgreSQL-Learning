@@ -30,4 +30,50 @@ In this video, the instructor demonstrates how to establish a relationship betwe
 ### Summary
 This video effectively walks through the process of creating a relationship between two tables using foreign keys in PostgreSQL. It emphasizes the importance of proper table creation and the implications of relationships in relational databases.
 
-If you have any specific questions or need clarification on any of the steps, feel free to ask!
+
+
+In this video, the instructor demonstrates how to assign cars to people in a PostgreSQL database, utilizing the foreign key relationship established earlier. Here's a summary of the key steps and concepts covered:
+
+### Steps to Assign Cars to People
+
+1. **Initial State**:
+   - The `car_id` column in the `person` table is initially empty for all entries.
+
+2. **Updating Car Assignments**:
+   - The instructor updates the `car_id` for two people, **Fernanda** and **Omar**, using SQL `UPDATE` statements.
+
+3. **Assigning Car to Fernanda**:
+   - The command to assign the car (GMC) to Fernanda is executed:
+     ```sql
+     UPDATE person SET car_id = 2 WHERE id = 1;
+     ```
+   - After executing, the database confirms that Fernanda has been assigned a car.
+
+4. **Attempting to Assign the Same Car to Omar**:
+   - The instructor tries to assign the same car (GMC) to Omar:
+     ```sql
+     UPDATE person SET car_id = 2 WHERE id = 2;
+     ```
+   - The database throws an error due to the unique constraint on `car_id`, confirming that the constraint is functioning as intended.
+
+5. **Assigning a Different Car to Omar**:
+   - Omar is then assigned a different car (Land Rover):
+     ```sql
+     UPDATE person SET car_id = 1 WHERE id = 2;
+     ```
+   - This assignment is successful, showing that Omar is now linked to the Land Rover.
+
+6. **Verifying Assignments**:
+   - The instructor runs `SELECT` queries to display the updated tables:
+     - Checking the `person` table to see which car IDs are assigned to each person.
+     - Checking the `car` table to confirm the details of the cars assigned.
+
+7. **Attempting to Assign a Non-Existent Car**:
+   - An attempt is made to assign a car ID that does not exist in the `car` table (ID = 3):
+     ```sql
+     UPDATE person SET car_id = 3 WHERE id = 1;
+     ```
+   - The database throws a foreign key constraint violation error, reinforcing the importance of ensuring the foreign key must exist in the referenced table.
+
+### Summary
+The video effectively illustrates how to manage relationships between tables using foreign keys in PostgreSQL. It highlights the significance of unique constraints and foreign key constraints in maintaining data integrity.
